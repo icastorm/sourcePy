@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: sourcePy
+Version: 0.0.1
+Summary: testing some source functions
+Author: Isaac Arseneau
+License-Expression: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# sourcePy
+
+Description goes here, when you have time to add one!

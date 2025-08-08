@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/sourcePy/__init__.py
+src/sourcePy/example.py
+src/sourcePy/plotSource.py
+src/sourcePy/source.py
+src/sourcePy.egg-info/PKG-INFO
+src/sourcePy.egg-info/SOURCES.txt
+src/sourcePy.egg-info/dependency_links.txt
+src/sourcePy.egg-info/top_level.txt
