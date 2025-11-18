@@ -15,14 +15,14 @@ In general, back-trajectory source analysis experiments involve taking measureme
 
 # Modules
 
-#### hysplit.py
+### hysplit.py
 The hysplit module is intentended to allow users to quickly and easily generate trajectories using HYSPLIT. It contains the met class and a variety of methods to this end, including the met class, a class that contains descriptive information about available NOAA ARL files. Met objects can be paired with trajectory request objects to generate HYSPLIT's CONTROL and SETUP files, and then HYSPLIT can be run directly within the python kernel.
 
 NOTE: This module currently only works on Windows machines. Non-windows users can still use the other modules.
 
 Coming soon: full Unix support, HYSPLIT concentrations
 
-#### source.py
+### source.py
 The primary calculations and handling of trajectories and concentration observations are held in the source module. There are three primary classes in source: The measurement class, trajectory class, and trajectory request class. 
 
 **Measurements** can be defined manually or read in from data files, and contain information about an observation of some atmospheric aerosol (location, timing, value, etc). Measurements are necessary for the source analyses implemented here and can also be useful for determining the location and timing of trajectories.
@@ -35,6 +35,7 @@ If the user has read in trajectories, paired them with measurements, and defined
 
 Coming soon: Faster/alternative RCF calculation methods, concentration analyses
 
-#### plotSource.py
+### plotSource.py
 plotSource uses matplotlib and cartopy to plot data about arrays of trajectories and measurements, generate basic geographic maps, and plot the 2D source analysis fields. It is not a comprehensive plotting module, and is only intended to get new users off on the right foot when they look to start plotting their data.
+
 
