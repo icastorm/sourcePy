@@ -7,10 +7,10 @@ In general, back-trajectory source analysis experiments involve taking measureme
 
 ### Available Analysis Methods
 
-Potential Source Contribution Function ([PSCF](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2001JD900024))
-Concentration-Weighted Trajectories ([CWT](https://www.sciencedirect.com/science/article/pii/S0169809511002948))
-Simplified Quantitative Transport Bias Analysis ([SQTBA](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JD030380))
-Redistributed Concentration Field ([RCF](https://www.sciencedirect.com/science/article/abs/pii/1352231095003142))
+- Potential Source Contribution Function ([PSCF](https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1029/2001JD900024))
+- Concentration-Weighted Trajectories ([CWT](https://www.sciencedirect.com/science/article/pii/S0169809511002948))
+- Simplified Quantitative Transport Bias Analysis ([SQTBA](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2019JD030380))
+- Redistributed Concentration Field ([RCF](https://www.sciencedirect.com/science/article/abs/pii/1352231095003142))
 
 
 # Modules
@@ -37,3 +37,4 @@ Coming soon: Faster/alternative RCF calculation methods, concentration analyses
 
 #### plotSource.py
 plotSource uses matplotlib and cartopy to plot data about arrays of trajectories and measurements, generate basic geographic maps, and plot the 2D source analysis fields. It is not a comprehensive plotting module, and is only intended to get new users off on the right foot when they look to start plotting their data.
+
