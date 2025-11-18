@@ -1,5 +1,9 @@
 ##### TODO
+### - Fix indent issue in counting n
+### - Check to see if issue is present in CWT as well (I don't think so)
 # - Add handling (and make default) for timedelta runtimes in trajRequests and measurementToRequest
+# - Overhaul of inits, need to be more robust and verbose, better at handling unexpected inputs
+# - Fix YY to YYYY conversion in traj methods
 
 
 
@@ -61,7 +65,7 @@ class trajectory:
         self.measurements = measurements
         
     def readNewTraj(self,fName=None):
-        """Reads in and processes the data from a trajectory
+        """Reads in and processes the data from a HYSPLIT trajectory.
         
         Parameters
         ----------
@@ -154,7 +158,8 @@ class measurement:
         self.datetime = datetime
         self.duration = duration
         
-        # Get the length into a timeDelta
+        # Get the length into a timedelta
+        #if type(duration) not dt.timedelta:
         if type(duration) in (int, float):
             self.duration = dt.timedelta(hours=duration)
             
@@ -663,7 +668,7 @@ def calcPSCF(trajs,gridLons,gridLats,dLon,dLat,critVals,im=0):
 
 
 def weighting_CL2001(nCounts,divisor = 10):
-    """Produce weights for a PSCF field using the n field and the method outlined in Cheng and Lin (2001). Using a divisor of 10 follows the Cheng and Lin (2001) method exactly, although other numbers can be used if desired. The output of this method is a 2D set of weights that can be multiplied against the PSCF field.
+    """Produce weights for a PSCF field using the n field and the method outlined in Cheng and Lin (2001). Using a divisor of 10 (default) follows the Cheng and Lin (2001) method exactly, although other numbers can be used if desired. The output of this method is a 2D set of weights that can be multiplied against the PSCF field.
 
     Parameters
     ----------
@@ -1231,7 +1236,7 @@ def calcRCF(trajs,gridLons,gridLats,dLon,dLat,im=0,sigma=0.5,nBoot=1000,con1=95,
 
 
 
-################ OLD CAPTEX SPECIFIC STUFF ###################
+################### OLD CAPTEX SPECIFIC STUFF ###################
 
 # Read in the ground measurement data from a file
 def groundMeasurements(fName,sr=2,dtype=float):

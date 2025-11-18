@@ -48,7 +48,7 @@ def metDates(metFile,exec_path):
 
     # Ensure the metFile path is in the correct format (single / at end)
     # Get the dates, piping the output back to here rather than in the shell
-    out = sp.run(exec_path+" "+metFile,shell=True,capture_output=True,text=True).stdout.splitlines()
+    out = sp.run(exec_path+' "'+metFile+'"',shell=True,capture_output=True,text=True).stdout.splitlines()
 
     # Convert the output strings to datetime objects
     dates = []
@@ -81,6 +81,7 @@ def metRange(met_path,exec_path):
     """
     
     files = source.get_fNames(met_path)
+    print(files)
     out = []
     for fName in files:
         allDates = metDates(fName,exec_path)
@@ -144,7 +145,7 @@ def necessaryMets(req,mets,exec_path):
 
 
 # Given a request, the necessary met files, a storage path, and a working path, write a control file
-def generateTrajCONTROL(req,metFiles,storage_path,working_path,vMotion=0,modelTop=10000.0):
+def generateTrajCONTROL(req,metFiles,storage_path,working_path,vMotion=0,modelTop=10000.0,outName=None):
     """Given a request and some further information about the HYSPLIT run, create and write a trajectory CONTROL file in the HYSPLIT working directory.
 
     Parameters
@@ -249,6 +250,7 @@ def runHYSPLITStandard(working_path,exec_path,out = False):
 
 
 # Given a request, the necessary met files, a storage path, and a working path, write a control file
+# HARDCODED, NEEDS TO BE FIXED
 def generateConcCONTROL(req,mets,storage_path,working_path,vMotion=0,modelTop=10000.0,polID="TEST",eRate=1.0,eHours=1.0,center=(0.0,0.0),
                         releaseStart=None,samplingStart=None,samplingStop=None,outName=None):
 
