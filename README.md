@@ -39,3 +39,6 @@ Coming soon: Faster/alternative RCF calculation methods, concentration analyses
 plotSource uses matplotlib and cartopy to plot data about arrays of trajectories and measurements, generate basic geographic maps, and plot the 2D source analysis fields. It is not a comprehensive plotting module, and is only intended to get new users off on the right foot when they look to start plotting their data.
 
 
+# Required Software
+
+### HYSPLIT (most recent versions should work, tested on v5.4.0)
